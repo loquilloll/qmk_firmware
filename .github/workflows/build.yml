@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: 'true'
       - name: Compile
         shell: bash
         run: qmk compile -kb keebio/iris/rev4 -km default
