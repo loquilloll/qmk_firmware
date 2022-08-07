@@ -18,5 +18,9 @@ jobs:
       - name: Compile
         shell: bash
         run: qmk compile -kb keebio/iris/rev4 -km default
+      - uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: .build/keebio_iris_rev4_default.hex
 
         
