@@ -17,10 +17,10 @@ jobs:
           submodules: 'true'
       - name: Compile
         shell: bash
-        run: qmk compile -kb keebio/iris/rev4 -km default
+        run: qmk compile -kb keebio/iris/rev4 -km loquillo
       - uses: actions/upload-artifact@v3
         with:
           name: firmware
-          path: .build/keebio_iris_rev4_default.hex
+          path: .build/keebio_iris_rev4_loquillo.hex
 
         
