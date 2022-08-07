@@ -2,8 +2,9 @@ name: Build
 
 on:
   push:
-    - "github/workflows/build.yml"
-    - "keyboards/keebio/iris/rev4/**"
+    paths:
+      - "github/workflows/build.yml"
+      - "keyboards/keebio/iris/rev4/**"
 
 jobs:
   build:
