@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - ".github/workflows/build.yml"
-      - "keyboards/keebio/iris/rev4/**"
+      - "keyboards/keebio/iris/keymaps/loquillo/**"
 
 jobs:
   build:
