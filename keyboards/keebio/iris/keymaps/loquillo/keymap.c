@@ -34,7 +34,7 @@ enum custom_keycodes {
   RALT_KL,
   RG_SCLN,
   LT1_ESC,
-  LT1_BSPC,
+  LT1_BSPC
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
