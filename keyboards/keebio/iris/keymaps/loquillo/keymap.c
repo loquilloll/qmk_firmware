@@ -138,9 +138,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
    switch (keycode) {
-      case LSFT_KF: 
+      case LSFT_T: 
          return TAPPING_TERM_SFT;
-      case RSFT_KJ: 
+      case RSFT_T: 
          return TAPPING_TERM_SFT;
       default:
          return TAPPING_TERM;
