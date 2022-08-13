@@ -23,18 +23,7 @@ enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   LOWER,
   RAISE,
-  ADJUST,
-  LCTL_KESC,
-  LGUI_KA,
-  LALT_KS,
-  LCTL_KD,
-  LSFT_KF,
-  RSFT_KJ,
-  RCTL_KK,
-  RALT_KL,
-  RG_SCLN,
-  LT1_ESC,
-  LT1_BSPC
+  ADJUST
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -136,15 +125,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-   switch (keycode) {
-      case LSFT_T(KC_F): 
-         return TAPPING_TERM_SFT;
-      case RSFT_T(KC_J): 
-         return TAPPING_TERM_SFT;
-      default:
-         return TAPPING_TERM;
-}}
+// uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+//    switch (keycode) {
+//       case LSFT_T(KC_F): 
+//          return TAPPING_TERM_SFT;
+//       case RSFT_T(KC_J): 
+//          return TAPPING_TERM_SFT;
+//       default:
+//          return TAPPING_TERM;
+// }}
 
 // bool encoder_update_user(uint8_t index, bool clockwise) {
 //     if (index == 0) {
