@@ -6,13 +6,6 @@
 #define _RAISE 2
 #define _ADJUST 3
 
-enum custom_keycodes {
-  QWERTY = SAFE_RANGE,
-  LOWER,
-  RAISE,
-  ADJUST,
-};
-
 #define LCTL_KESC LCTL_T(KC_ESC)
 #define LGUI_KA   LGUI_T(KC_A)
 #define LALT_KS   LALT_T(KC_S)
@@ -25,6 +18,24 @@ enum custom_keycodes {
 
 #define LT1_ESC LT(1,KC_ESC)
 #define LT1_BSPC LT(1, KC_BSPC)
+
+enum custom_keycodes {
+  QWERTY = SAFE_RANGE,
+  LOWER,
+  RAISE,
+  ADJUST,
+  LCTL_KESC,
+  LGUI_KA,
+  LALT_KS,
+  LCTL_KD,
+  LSFT_KF,
+  RSFT_KJ,
+  RCTL_KK,
+  RALT_KL,
+  RG_SCLN,
+  LT1_ESC,
+  LT1_BSPC,
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -125,20 +136,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLU);
-        } else {
-            tap_code(KC_VOLD);
-        }
-    }
-    else if (index == 1) {
-        if (clockwise) {
-            tap_code(KC_PGDN);
-        } else {
-            tap_code(KC_PGUP);
-        }
-    }
-    return false;
-}
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+   switch (keycode) {
+      case LSFT_KF: 
+         return TAPPING_TERM_SFT;
+      case RSFT_KJ: 
+         return TAPPING_TERM_SFT;
+      default:
+         return TAPPING_TERM;
+}}
+
+// bool encoder_update_user(uint8_t index, bool clockwise) {
+//     if (index == 0) {
+//         if (clockwise) {
+//             tap_code(kc_volu);
+//         } else {
+//             tap_code(kc_vold);
+//         }
+//     }
+//     else if (index == 1) {
+//         if (clockwise) {
+//             tap_code(kc_pgdn);
+//         } else {
+//             tap_code(kc_pgup);
+//         }
+//     }
+//     return false;
+// }
